@@ -52,7 +52,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /************************************************************************/
 /******/ ([
 /* 0 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
@@ -64,9 +64,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	  __webpack_require__(9);
 	}
 
-/***/ },
+/***/ }),
 /* 1 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	/**
 	 * @fileOverview This is the root of the project. It allows users to register nouns and roles with dmv. It also exports plugins.
@@ -145,9 +145,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	  exports.setupRan = true;
 	}, 0);
 
-/***/ },
+/***/ }),
 /* 2 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 	/**
@@ -203,7 +203,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    } else {
 	      let invalidVerbs = verbs.filter(v => !this.verbs.has(v));
 	      if (invalidVerbs.length) {
-	        console.warn(new Error(`${ invalidVerbs.join(',') } are not valid verbs for this noun.`));
+	        console.warn(new Error(`${invalidVerbs.join(',')} are not valid verbs for this noun.`));
 	      }
 	      verbs = verbs.filter(v => this.verbs.has(v));
 	    }
@@ -225,9 +225,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	module.exports = Noun;
 
-/***/ },
+/***/ }),
 /* 3 */
-/***/ function(module, exports) {
+/***/ (function(module, exports) {
 
 	'use strict';
 	
@@ -249,9 +249,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	  }
 	};
 
-/***/ },
+/***/ }),
 /* 4 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 	/**
@@ -292,7 +292,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	   */
 	  authorize(verbs, noun) {
 	    if (!nouns.has(noun)) {
-	      throw new Error(`cannot authorize ${ noun }`);
+	      throw new Error(`cannot authorize ${noun}`);
 	    }
 	    nouns.get(noun).authorize(this.name, verbs);
 	  }
@@ -300,9 +300,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	module.exports = Role;
 
-/***/ },
+/***/ }),
 /* 5 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
@@ -310,9 +310,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	module.exports = new NounManager();
 
-/***/ },
+/***/ }),
 /* 6 */
-/***/ function(module, exports) {
+/***/ (function(module, exports) {
 
 	'use strict';
 	
@@ -331,9 +331,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	module.exports = NounManager;
 
-/***/ },
+/***/ }),
 /* 7 */
-/***/ function(module, exports) {
+/***/ (function(module, exports) {
 
 	'use strict';
 	/**
@@ -359,9 +359,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	module.exports = RoleManager;
 
-/***/ },
+/***/ }),
 /* 8 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
@@ -369,9 +369,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	module.exports = new RoleManager();
 
-/***/ },
+/***/ }),
 /* 9 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
@@ -469,9 +469,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	  });
 	};
 
-/***/ },
+/***/ }),
 /* 10 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
@@ -511,7 +511,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  }
 	};
 
-/***/ }
+/***/ })
 /******/ ])
 });
 ;
