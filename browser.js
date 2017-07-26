@@ -61,7 +61,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	module.exports = __webpack_require__(1);
 	// angular code just needs to run. it will register module with angular
 	if (typeof angular !== 'undefined') {
-	  __webpack_require__(9);
+	  __webpack_require__(9)(angular);
 	}
 
 /***/ }),
