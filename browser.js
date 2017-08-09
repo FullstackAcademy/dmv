@@ -150,11 +150,13 @@ return /******/ (function(modules) { // webpackBootstrap
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
+	
+	const BaseClass = __webpack_require__(3);
 	/**
 	 * @class  Noun
 	 */
 	
-	class Noun extends __webpack_require__(3) {
+	class Noun extends BaseClass {
 	  /**
 	   * @param  {string} name - name of noun
 	   * @return {noun}        - the created noun
@@ -254,13 +256,14 @@ return /******/ (function(modules) { // webpackBootstrap
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
+	
+	const BaseClass = __webpack_require__(3);
 	/**
 	 * @class Role
 	 */
-	
 	const nouns = __webpack_require__(5);
 	
-	class Role extends __webpack_require__(3) {
+	class Role extends BaseClass {
 	  constructor(name) {
 	    super();
 	    this.name = name;
