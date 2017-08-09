@@ -3,3 +3,4 @@
 module.exports = require('./dmv');
 
 module.exports.canMixin = require('./canMixin');
+module.exports.angularPlugin = require('./angularPlugin');

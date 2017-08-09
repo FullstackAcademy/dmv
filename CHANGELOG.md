@@ -4,3 +4,6 @@
 
 ## 2.0.1
 - Actually passing in `angular` to the angular plugin
+
+## 2.0.2
+- Exporting angular plugin
