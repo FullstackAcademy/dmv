@@ -1,10 +1,12 @@
 'use strict';
+
+const BaseClass = require('./afterSetup');
 /**
  * @class Role
  */
 const nouns = require('./nouns');
 
-class Role extends require('./afterSetup'){
+class Role extends BaseClass{
   constructor(name) {
     super();
     this.name = name;

@@ -1,9 +1,11 @@
 'use strict';
+
+const BaseClass = require('./afterSetup');
 /**
  * @class  Noun
  */
 
-class Noun extends require('./afterSetup'){
+class Noun extends BaseClass {
   /**
    * @param  {string} name - name of noun
    * @return {noun}        - the created noun
