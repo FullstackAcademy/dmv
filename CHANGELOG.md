@@ -7,3 +7,6 @@
 
 ## 2.0.2
 - Exporting angular plugin
+
+## 2.0.3
+- `class Role extends require(something)` doesn't agree with webpack require, fixing
