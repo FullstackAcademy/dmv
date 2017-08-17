@@ -10,3 +10,6 @@
 
 ## 2.0.3
 - `class Role extends require(something)` doesn't agree with webpack require, fixing
+
+## 2.0.4
+- files requiring `mongoose` will now be functions that take in `mongoose`

@@ -1,6 +1,6 @@
 'use strict';
 
-const permissionSchema = require('./permissionSchema');
+const permissionSchemaLoader = require('./permissionSchema');
 const canMixin = require('./canMixin');
 /**
  * @description  This is a [mongoose plugin](http://mongoosejs.com/docs/plugins.html).
@@ -19,11 +19,11 @@ const canMixin = require('./canMixin');
  * @classDesc Mongoose plugin to provide roles to users
  * @mixin
  */
-const mongoosePlugin = module.exports = function(schema) {
+const mongoosePlugin = module.exports = function(schema, mongoose) {
   /**
    * @lends  plugins/mongoose
    */
-
+  const permissionSchema = permissionSchemaLoader(mongoose);
   schema.add({
     roles: [String],
     permissionsWhitelist: [permissionSchema],
