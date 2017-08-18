@@ -16,3 +16,6 @@
 
 ## 2.0.5
 - removing `mongoose` and `express` dependencies
+
+## 2.0.6
+- fixing mongoose plugin

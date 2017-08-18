@@ -19,16 +19,18 @@ const canMixin = require('./canMixin');
  * @classDesc Mongoose plugin to provide roles to users
  * @mixin
  */
-const mongoosePlugin = module.exports = function(schema, mongoose) {
-  /**
-   * @lends  plugins/mongoose
-   */
+const mongoosePlugin = module.exports = mongoose => {
   const permissionSchema = permissionSchemaLoader(mongoose);
-  schema.add({
-    roles: [String],
-    permissionsWhitelist: [permissionSchema],
-    permissionsBlacklist: [permissionSchema]
-  });
+  return function(schema) {
+    /**
+     * @lends  plugins/mongoose
+     */
+    schema.add({
+      roles: [String],
+      permissionsWhitelist: [permissionSchema],
+      permissionsBlacklist: [permissionSchema]
+    });
 
-  Object.assign(schema.methods, canMixin);
+    Object.assign(schema.methods, canMixin);
+  };
 };
