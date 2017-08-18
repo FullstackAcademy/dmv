@@ -13,3 +13,6 @@
 
 ## 2.0.4
 - files requiring `mongoose` will now be functions that take in `mongoose`
+
+## 2.0.5
+- removing `mongoose` and `express` dependencies
