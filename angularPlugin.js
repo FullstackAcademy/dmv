@@ -21,7 +21,7 @@ module.exports = angular => {
         angular.extend(proto, canMixin);
       };
     })
-    .factory('authConfig', function($rootScope, $injector) {
+    .factory('authConfig', ['$rootScope', '$injector', function($rootScope, $injector) {
       let userGetterMethod = function() {};
       let asyncUserGetterMethod = function() {};
       let canGetUserAsync = false;
@@ -95,6 +95,6 @@ module.exports = angular => {
         }
       };
 
-    });
+    }]);
 }
 

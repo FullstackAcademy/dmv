@@ -19,3 +19,6 @@
 
 ## 2.0.6
 - fixing mongoose plugin
+
+## 2.0.7
+- using array syntax for angular plugin to avoid breaking during minification
