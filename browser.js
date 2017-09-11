@@ -438,10 +438,11 @@ return /******/ (function(modules) { // webpackBootstrap
 	            user = getUserAsync();
 	          }
 	          next.resolve.dmvAuthPromise = () => Promise.resolve(user).then(user => {
-	            const forbidden = new Error(`You're not authorized to view his page.`);
+	            const forbidden = new Error(`You're not authorized to view this page.`);
 	            if (next && next.auth) {
 	              if (!user) {
 	                $rootScope.$broadcast('NOT_AUTHENTICATED');
+	                forbidden.status = 401;
 	                throw forbidden;
 	              }
 	              if (next.auth === true) {
@@ -450,6 +451,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	              if (typeof next.auth === 'function') {
 	                if (!next.auth.call(event, user, next)) {
 	                  $rootScope.$broadcast('NOT_AUTHORIZED');
+	                  forbidden.status = 403;
 	                  throw forbidden;
 	                }
 	                return;
@@ -459,6 +461,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	                  let noun = next.auth[verb];
 	                  if (!user.can(verb, noun)) {
 	                    $rootScope.$broadcast('NOT_AUTHORIZED');
+	                    forbidden.status = 403;
 	                    throw forbidden;
 	                  }
 	                }
