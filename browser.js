@@ -438,19 +438,19 @@ return /******/ (function(modules) { // webpackBootstrap
 	            user = getUserAsync();
 	          }
 	          next.resolve.dmvAuthPromise = () => Promise.resolve(user).then(user => {
+	            const forbidden = new Error(`You're not authorized to view his page.`);
 	            if (next && next.auth) {
 	              if (!user) {
 	                $rootScope.$broadcast('NOT_AUTHENTICATED');
-	                event.preventDefault();
-	                return;
+	                throw forbidden;
 	              }
 	              if (next.auth === true) {
 	                return;
 	              }
 	              if (typeof next.auth === 'function') {
 	                if (!next.auth.call(event, user, next)) {
-	                  event.preventDefault();
 	                  $rootScope.$broadcast('NOT_AUTHORIZED');
+	                  throw forbidden;
 	                }
 	                return;
 	              }
@@ -458,9 +458,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	                if (next.auth.hasOwnProperty(verb)) {
 	                  let noun = next.auth[verb];
 	                  if (!user.can(verb, noun)) {
-	                    event.preventDefault();
 	                    $rootScope.$broadcast('NOT_AUTHORIZED');
-	                    return;
+	                    throw forbidden;
 	                  }
 	                }
 	              }
