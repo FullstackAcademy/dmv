@@ -22,3 +22,6 @@
 
 ## 2.0.7
 - using array syntax for angular plugin to avoid breaking during minification
+
+## 2.1.0
+- attempting different state transition method
