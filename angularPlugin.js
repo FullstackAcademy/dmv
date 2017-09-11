@@ -64,7 +64,7 @@ module.exports = angular => {
             }
             next.resolve.dmvAuthPromise = () => Promise.resolve(user)
               .then(user => {
-                const forbidden = new Error(`You're not authorized to view his page.`);
+                const forbidden = new Error(`You're not authorized to view this page.`);
                 if(next && next.auth) {
                   if(!user) {
                     $rootScope.$broadcast('NOT_AUTHENTICATED');
