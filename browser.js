@@ -437,7 +437,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	          if (canGetUserAsync) {
 	            user = getUserAsync();
 	          }
-	          next.resolve.dmvAuthPromise = Promise.resolve(user).then(user => {
+	          next.resolve.dmvAuthPromise = () => Promise.resolve(user).then(user => {
 	            if (next && next.auth) {
 	              if (!user) {
 	                $rootScope.$broadcast('NOT_AUTHENTICATED');
