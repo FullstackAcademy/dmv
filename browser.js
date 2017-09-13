@@ -437,8 +437,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	          if (canGetUserAsync) {
 	            user = getUserAsync();
 	          }
-	          const resolve = next.resolve || {};
-	          resolve.dmvAuthPromise = () => Promise.resolve(user).then(user => {
+	          next.resolve = next.resolve || {};
+	          next.resolve.dmvAuthPromise = () => Promise.resolve(user).then(user => {
 	            const forbidden = new Error(`You're not authorized to view this page.`);
 	            if (next && next.auth) {
 	              if (!user) {
