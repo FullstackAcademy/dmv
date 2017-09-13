@@ -62,7 +62,8 @@ module.exports = angular => {
             if (canGetUserAsync) {
               user = getUserAsync();
             }
-            next.resolve.dmvAuthPromise = () => Promise.resolve(user)
+            const resolve = next.resolve || {};
+            resolve.dmvAuthPromise = () => Promise.resolve(user)
               .then(user => {
                 const forbidden = new Error(`You're not authorized to view this page.`);
                 if(next && next.auth) {
