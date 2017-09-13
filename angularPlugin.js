@@ -58,6 +58,7 @@ module.exports = angular => {
 
 
           $rootScope.$on('$stateChangeStart', function(event, next) {
+            if (!next || !next.auth) { return; }
             let user = getUser();
             if (canGetUserAsync) {
               user = getUserAsync();
