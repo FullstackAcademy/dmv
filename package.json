@@ -6,7 +6,7 @@
   "repository": "https://github.com/zekenie/dmv",
   "main": "index.js",
   "engines": {
-    "node": "7.10.1"
+    "node": "8.11.3"
   },
   "scripts": {
     "test": "mocha",
