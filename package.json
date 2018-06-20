@@ -1,12 +1,12 @@
 {
   "name": "fs-dmv",
-  "version": "2.1.6",
+  "version": "2.1.7",
   "description": "A MEAN stack role/permission management system",
   "author": "Zeke Nierenberg",
   "repository": "https://github.com/zekenie/dmv",
   "main": "index.js",
   "engines": {
-    "node": "7.10.1"
+    "node": "8.11.3"
   },
   "scripts": {
     "test": "mocha",
@@ -26,7 +26,7 @@
     "eslint": "^2.10.2",
     "eslint-loader": "^1.3.0",
     "jsdoc": "^3.4.0",
-    "mocha": "^2.3.4",
+    "mocha": "^5.2.0",
     "mock-require": "^1.2.1",
     "ng-annotate-loader": "0.1.0",
     "sinon": "^1.17.3",
