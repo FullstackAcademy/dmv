@@ -46,8 +46,9 @@ for (let i = 0; i < 2; i++) {
     describe('setup functionality', () => {
       before('wait for setTimeout to run', (done) => {
         let doneCalled = false;
-        setInterval(() => {
+        let intervalId = setInterval(() => {
           if (dmv.setupRan && !doneCalled) {
+            clearInterval(intervalId)
             done();
             doneCalled = true;
           }
