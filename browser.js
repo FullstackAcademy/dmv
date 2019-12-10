@@ -498,9 +498,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	 * @return {boolean}
 	 */
 	exports.can = function (verb, noun) {
-	  if (onPermissionsList(this.permissionsWhiteList, verb, noun)) {
+	  if (onPermissionsList(this.permissionsWhitelist, verb, noun)) {
 	    return true;
-	  } else if (onPermissionsList(this.permissionsBlackList, verb, noun)) {
+	  } else if (onPermissionsList(this.permissionsBlacklist, verb, noun)) {
 	    return false;
 	  } else {
 	    return roles.can(this.roles, verb, noun);

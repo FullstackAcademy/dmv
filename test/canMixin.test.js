@@ -23,19 +23,19 @@ describe('canMixin', () => {
   describe('can', () => {
     it('is true for something on the whitelist', () => {
       const user = {
-        permissionsWhiteList: [{
+        permissionsWhitelist: [{
           noun: 'Cat',
           verb: 'create'
         }],
-        permissionBlackList: []
+        permissionBlacklist: []
       };
       expect(canMixin.can.call(user, 'create', 'Cat')).to.be.true;
     });
 
     it('returns false for something on the blacklist', () => {
       const user = {
-        permissionsWhiteList: [],
-        permissionsBlackList: [{
+        permissionsWhitelist: [],
+        permissionsBlacklist: [{
           noun: 'Cat',
           verb: 'pet'
         }]

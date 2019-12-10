@@ -19,11 +19,11 @@
 
     <h1 class="page-title">Source: canMixin.js</h1>
 
-    
 
 
 
-    
+
+
     <section>
         <article>
             <pre class="prettyprint source linenums"><code>'use strict';
@@ -42,9 +42,9 @@ const onPermissionList = (list, verb, noun) => {
  * @return {boolean}
  */
 exports.can = function(verb, noun) {
-  if(onPermissionList(this.permissionWhiteList, verb, noun)) {
+  if(onPermissionList(this.permissionWhitelist, verb, noun)) {
     return true;
-  } else if(onPermissionList(this.permissionBlackList, verb, noun)) {
+  } else if(onPermissionList(this.permissionBlacklist, verb, noun)) {
     return false;
   } else {
     return roles.can(this.roles, verb, noun);
