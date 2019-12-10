@@ -23,7 +23,7 @@ describe('canMixin', () => {
   describe('can', () => {
     it('is true for something on the whitelist', () => {
       const user = {
-        permissionWhiteList: [{
+        permissionsWhiteList: [{
           noun: 'Cat',
           verb: 'create'
         }],
@@ -34,8 +34,8 @@ describe('canMixin', () => {
 
     it('returns false for something on the blacklist', () => {
       const user = {
-        permissionWhiteList: [],
-        permissionBlackList: [{
+        permissionsWhiteList: [],
+        permissionsBlackList: [{
           noun: 'Cat',
           verb: 'pet'
         }]

@@ -25,3 +25,6 @@
 
 ## 2.1.0
 - attempting different state transition method
+
+## 2.3.1
+- permissionsWhitelist instead of permissionWhitelist

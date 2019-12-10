@@ -2,7 +2,7 @@
 
 const roles = require('./roles');
 
-const onPermissionList = (list, verb, noun) => {
+const onPermissionsList = (list, verb, noun) => {
   return list && !!list.find(item => item.verb === verb && item.noun === noun);
 };
 
@@ -14,9 +14,9 @@ const onPermissionList = (list, verb, noun) => {
  * @return {boolean}
  */
 exports.can = function(verb, noun) {
-  if(onPermissionList(this.permissionWhiteList, verb, noun)) {
+  if(onPermissionsList(this.permissionsWhiteList, verb, noun)) {
     return true;
-  } else if(onPermissionList(this.permissionBlackList, verb, noun)) {
+  } else if(onPermissionsList(this.permissionsBlackList, verb, noun)) {
     return false;
   } else {
     return roles.can(this.roles, verb, noun);
