@@ -1,13 +1,13 @@
 (function webpackUniversalModuleDefinition(root, factory) {
 	if(typeof exports === 'object' && typeof module === 'object')
-		module.exports = factory();
+		module.exports = factory(require("_"));
 	else if(typeof define === 'function' && define.amd)
-		define([], factory);
+		define(["_"], factory);
 	else if(typeof exports === 'object')
-		exports["dmv"] = factory();
+		exports["dmv"] = factory(require("_"));
 	else
-		root["dmv"] = factory();
-})(this, function() {
+		root["dmv"] = factory(root["_"]);
+})(this, function(__WEBPACK_EXTERNAL_MODULE_11__) {
 return /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
@@ -484,6 +484,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	'use strict';
 	
+	const _ = __webpack_require__(11);
 	const roles = __webpack_require__(8);
 	
 	const onPermissionsList = (list, verb, noun) => {
@@ -514,11 +515,17 @@ return /******/ (function(modules) { // webpackBootstrap
 	 */
 	exports.hasRole = function (r) {
 	  if (typeof r === 'string') {
-	    return this.roles.indexOf(r) !== -1;
+	    return _.includes(this.roles, r);
 	  } else if (Array.isArray(r)) {
-	    return !r.some(role => this.roles.indexOf(role) === -1);
+	    return !r.some(role => _.includes(this.roles, role));
 	  }
 	};
+
+/***/ }),
+/* 11 */
+/***/ (function(module, exports) {
+
+	module.exports = __WEBPACK_EXTERNAL_MODULE_11__;
 
 /***/ })
 /******/ ])

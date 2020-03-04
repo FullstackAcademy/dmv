@@ -1,6 +1,6 @@
 {
   "name": "fs-dmv",
-  "version": "2.3.2",
+  "version": "2.3.3",
   "description": "A MEAN stack role/permission management system",
   "author": "Zeke Nierenberg",
   "repository": "https://github.com/zekenie/dmv",
@@ -33,5 +33,7 @@
     "webpack": "^1.13.0",
     "yarn": "^0.27.5"
   },
-  "dependencies": {}
+  "dependencies": {
+    "lodash": "^4.17.15"
+  }
 }

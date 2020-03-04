@@ -1,5 +1,6 @@
 'use strict';
 
+const _ = require('lodash');
 const roles = require('./roles');
 
 const onPermissionsList = (list, verb, noun) => {
@@ -30,8 +31,8 @@ exports.can = function(verb, noun) {
  */
 exports.hasRole = function(r) {
   if (typeof r === 'string'){
-    return this.roles.indexOf(r) !== -1;
+    return _.includes(this.roles, r);
   } else if (Array.isArray(r)) {
-    return !r.some(role => this.roles.indexOf(role) === -1)
+    return !r.some(role => _.includes(this.roles, role));
   }
 };

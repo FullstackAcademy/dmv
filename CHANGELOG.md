@@ -28,3 +28,6 @@
 
 ## 2.3.1
 - permissionsWhitelist instead of permissionWhitelist
+
+## 2.3.3
+- hasRole uses _.includes to deal with undefined arrays
